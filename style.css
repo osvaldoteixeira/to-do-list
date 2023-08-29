@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #000;
+  color: white;
+}
+body header, body header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body header div {
+  width: 100vw;
+  height: 200px;
+}
+body header div h1 {
+  font-size: 4rem;
+  color: #c7b31f;
+}
+body main {
+  background-image: linear-gradient(#080808, black);
+  padding: 60px 10px 0;
+  border-radius: 60px 60px 0 0;
+  z-index: 2;
+}
+body main div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  gap: 10px;
+  margin: auto;
+}
+body main div div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main div div div {
+  background-color: #1a1a1a;
+  display: flex;
+  flex-flow: row;
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 6px;
+  justify-content: start;
+}
+body main div div div.card-tarefa:hover {
+  background-color: #222222;
+}
+body main div div div.card-tarefa button:hover {
+  background-color: rgb(34, 32, 148);
+}
+body main div div div.card-tarefa button.btnRem {
+  display: none;
+}
+body main div div div.card-tarefa button.btnRef {
+  display: none;
+}
+body main div div div.card-tarefa-complete {
+  background-color: #080808;
+}
+body main div div div.card-tarefa-complete:hover {
+  background-color: #101010;
+}
+body main div div div.card-tarefa-complete div {
+  background-color: #080808;
+  color: #2e2e2e;
+  text-decoration: line-through;
+  padding: 10px;
+  display: flex;
+  justify-content: start;
+}
+body main div div div.card-tarefa-complete button {
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s;
+  min-width: calc(15% - 5px);
+  max-width: calc(15% - 5px);
+}
+body main div div div.card-tarefa-complete button.btnCon {
+  display: none;
+}
+body main div div div.card-tarefa-complete button.btnRef:hover {
+  background-color: rgb(21, 133, 80);
+}
+body main div div div.card-tarefa-complete button.btnRef svg#svgRef {
+  max-height: 16px;
+}
+body main div div div.card-tarefa-complete button svg#svgDel {
+  max-width: 16px;
+}
+body main div div div.card-tarefa-complete button:hover {
+  background-color: rgb(163, 33, 55);
+}
+body main div div div input, body main div div div button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: #080808;
+  color: white;
+}
+body main div div div button {
+  min-width: 30%;
+  max-width: 30%;
+}
+body main div div div button:hover {
+  background-color: rgb(21, 133, 80);
+}/*# sourceMappingURL=style.css.map */

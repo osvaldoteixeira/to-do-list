@@ -1,0 +1,181 @@
+@import "../../../contact-form/css/partials/reset";
+@import "../../../contact-form/css/partials/fonts";
+
+$color-primary: #efd81d;
+$color-primary: #c7b31f;
+
+$bgBody: #000;
+$bg0: #080808;
+$bg1: #1a1a1a;
+$bg2: #2e2e2e;
+$color: white;
+
+$padding-p: 10px;
+$padding-m: 20px;
+
+$margin-m: 20px;
+
+$gap-p: 10px;
+$gap-m: 20px;
+
+$rounded-p: 6px;
+$rounded-m: 12px;
+$rounded-g: 24px;
+$rounded-g-top: 24px 24px 0 0;
+
+$bg-btn-add: rgb(21, 133, 80);
+$bg-btn-remove: rgb(163, 33, 55);
+$bg-btn-complete: rgb(34, 32, 148);
+
+body {
+  font-family: $font-inter;
+  background-color: $bgBody;
+  color: $color;
+
+  header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    div{
+      // background: #000;
+      @extend header;
+      width: 100vw;
+      height: 200px;
+
+      h1{
+        font-size: 4rem;
+        color: $color-primary;
+      }
+    }
+  }
+
+  main{
+    background-image: linear-gradient($bg0, black);
+    padding: 60px $padding-p 0;
+    border-radius: 60px 60px 0 0;
+    z-index: 2;
+    div{
+      // background-color: green;
+      // padding: $padding-p;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 600px;
+      gap: $gap-p;
+      margin: auto;
+
+      div{
+        // background-color: orange;
+        // padding: $padding-p;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // &.lista{
+        //   background-color: blue;
+        // }
+
+        div{
+          background-color: $bg1;
+          display: flex;
+          flex-flow: row;
+          // width: 90%;
+          max-width: 600px;
+          padding: $padding-p;
+          border-radius: $rounded-p;
+          justify-content: start;
+
+          &.card-tarefa{
+
+            &:hover{
+              background-color: lighten($bg1, 3);
+            }
+            button{
+              &:hover{
+                background-color: $bg-btn-complete;
+              }
+
+              &.btnRem{
+                display: none;
+              }
+
+              &.btnRef{
+                display: none;
+              }
+            }
+            &-complete{
+              background-color: $bg0;
+              &:hover{
+                background-color: darken($bg1, 4);
+              }
+
+              div{
+                background-color: $bg0;
+                color: $bg2;
+                text-decoration: line-through;
+                padding: $padding-p;
+                display: flex;
+                justify-content: start;
+              }
+              button{
+                background-color: $bgBody;
+                color: $color;
+                text-decoration: none;
+                transition: all .2s;
+                min-width: calc(15% - $gap-p /2);
+                max-width: calc(15% - $gap-p /2);
+
+                &.btnCon{
+                  display: none;
+                }
+
+                &.btnRef {
+                  &:hover {
+                    background-color: $bg-btn-add;
+                  }
+                  svg#svgRef{
+                    max-height: 16px;
+                    // path{
+                    //   fill: #c7b31f;
+                    // }
+                  }
+                }
+
+                svg#svgDel{
+                  max-width: 16px;
+                }
+
+                &:hover{
+                  background-color: $bg-btn-remove;
+                }
+              }
+            }
+          }
+
+          input{
+            width: 100%;
+            padding: $padding-p;
+            font-size: 1.1rem;
+            border-radius: $rounded-p;
+            border: none;
+            outline: none;
+            background-color: $bg0;
+            color: $color;
+          }
+
+          button{
+            @extend input;
+            min-width: 30%;
+            max-width: 30%;
+
+            &:hover{
+              background-color: $bg-btn-add;
+            }
+          }
+        }
+      }
+    }
+  }
+}

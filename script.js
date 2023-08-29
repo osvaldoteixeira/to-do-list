@@ -33,7 +33,7 @@ btnAdd.addEventListener("click", ()=>{
   </div>
   `
   inputItem.value = ""
-  inputItem.focus()
+  // inputItem.focus()
   list.innerHTML += task
 })
 

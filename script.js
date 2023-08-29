@@ -19,22 +19,25 @@ let list = document.querySelector(".list")
 // let cardTarefa = document.querySelector(".card")
 
 btnAdd.addEventListener("click", ()=>{
-  ++counter;
-  let task = `
-  <div id="${counter}" class="card-tarefa">
-    <div class="listItem">${inputItem.value}</div>
-    <button class="btnCon" onclick="completar(${counter})">Completed</button>
-    <button class="btnRef" onclick="refazer(${counter})">
-      ${svgRef}
-    </button>
-    <button class="btnRem" onclick="deletar(${counter})">
-      ${svgDel}
-    </button>
-  </div>
-  `
-  inputItem.value = ""
-  // inputItem.focus()
-  list.innerHTML += task
+  let valueInput = inputItem.value
+  if ((valueInput !== null) && (valueInput !== "") && (valueInput !== undefined)) {
+    ++counter
+    let task = `
+      <div id="${counter}" class="card-tarefa">
+        <div class="listItem" onclick="completar(${counter})">${inputItem.value}</div>
+        <button class="btnCon" onclick="completar(${counter})">Completed</button>
+        <button class="btnRef" onclick="refazer(${counter})">
+          ${svgRef}
+        </button>
+        <button class="btnRem" onclick="deletar(${counter})">
+          ${svgDel}
+        </button>
+      </div>
+    `
+    inputItem.value = ""
+    // inputItem.focus()
+    list.innerHTML += task
+  }
 })
 
 inputItem.addEventListener("keyup",(event)=>{
@@ -53,6 +56,7 @@ function completar(id){
   var taskCard = document.getElementById(id)
   if (taskCard.classList.contains("card-tarefa")){
     taskCard.setAttribute("class", "card-tarefa-complete")
+    taskCard.parentNode.appendChild(taskCard)
   }else{
     taskCard.setAttribute("class", "card-tarefa")
   }
